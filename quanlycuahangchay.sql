@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 18, 2024 at 03:37 AM
+-- Generation Time: May 19, 2024 at 10:10 AM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `hoadon` (
   `pttt` varchar(50) NOT NULL,
   `tongtien` float NOT NULL,
   `manv` varchar(10) NOT NULL,
-  `tennv` int NOT NULL,
+  `tennv` varchar(50) NOT NULL,
   `makh` varchar(10) NOT NULL,
   `tenkh` varchar(50) NOT NULL,
   PRIMARY KEY (`mahd`)
@@ -72,6 +72,15 @@ CREATE TABLE IF NOT EXISTS `khachhang` (
   `sdt` varchar(11) NOT NULL,
   PRIMARY KEY (`makh`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `khachhang`
+--
+
+INSERT INTO `khachhang` (`makh`, `tenkh`, `diachi`, `sdt`) VALUES
+('KH01', 'Tèo', 'Hà nội', '0123456789'),
+('KH02', 'Nhung', 'Lào Cai', '0987655555'),
+('KH03', 'bbb', 'aa', 'a');
 
 -- --------------------------------------------------------
 
@@ -97,8 +106,9 @@ CREATE TABLE IF NOT EXISTS `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`manv`, `hoten`, `matkhau`, `gioitinh`, `ngaysinh`, `sdt`, `diachi`, `vaitro`) VALUES
-('NV01', 'Trần Thanh Sơn', '123456', 'Nam', '2002-03-24', '0123456789', 'tiền giang', 'Quản lý'),
-('NV02', 'Trần Thanh Sơn5', '1234567', 'Nữ', '2002-03-23', '0123456789', 'tiền giang', 'Nhân viên');
+('NV01', 'Trần Thanh Sơn', '123456', 'Nam', '2002-03-24', '0123456789', 'tiền giang', 'Nhân viên'),
+('NV02', 'Trần Thanh Sơn5', '1234567', 'Nữ', '2002-03-23', '0123456789', 'tiền giang', 'Nhân viên'),
+('NV03', 'Sơn', '123123', 'Nam', '0029-08-23', '000', 'Tiền Giang', 'Quản lý');
 
 -- --------------------------------------------------------
 
@@ -121,7 +131,9 @@ CREATE TABLE IF NOT EXISTS `sanpham` (
 --
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `gia`, `soluong`, `mota`) VALUES
-('SP01', 'Tàu hủ chay', 5000, 20, 'rất ngon');
+('SP01', 'Tàu hủ chay', 5000, 20, 'rất ngon'),
+('SP02', 'Hủ tiếu chay', 1000, 100, 'Ngon'),
+('SP03', 'Ruốc chay', 1000, 100, 'Ngon');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
